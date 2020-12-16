@@ -1,0 +1,28 @@
+{
+  "name": "helpme",
+  "description": "",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "cookies",
+    "https://meet.google.com/*"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "js/libs/jquery-v3.5.1.js",
+        "js/content-scripts.js"
+      ]
+    }
+  ]
+}
